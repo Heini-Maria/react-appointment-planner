@@ -32,12 +32,22 @@ export const ContactsPage = ({ contacts, addContact }) => {
   contacts array variable in props
   */
  useEffect(() => {
-  for(let i=0; i<contacts.length; i++) {
-    if(contacts[i].name === name) {
-      setDublicate(true);
-    };
-  };
- }, [name])
+  const nameIsDuble = () => {
+  const namefound = contacts.find((contact) => contact.name === name);
+  if (namefound !== undefined) {
+    return true;
+  }
+  return false;
+ };
+
+ if(nameIsDuble()) {
+  setDublicate(true);
+ } else {
+  setDublicate(false);
+ }
+
+}, [name]);
+
 
   return (
     <div>
@@ -57,7 +67,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
       <section>
         <h2>Contacts</h2>
         <TileList 
-        contacts={contacts}
+        array={contacts}
         />
       </section>
     </div>

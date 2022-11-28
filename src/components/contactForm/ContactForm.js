@@ -11,7 +11,7 @@ export const ContactForm = ({
 }) => {
   return (
     <div>
-      <form onSubmit={PaymentResponse.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label for='name'>Name</label>
         <input 
         type='text'
