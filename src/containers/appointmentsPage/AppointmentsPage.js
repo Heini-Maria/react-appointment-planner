@@ -4,10 +4,7 @@ import { AppointmentForm } from '../../components/appointmentForm/AppointmentFor
 import { TileList } from "../../components/tileList/TileList";
 
 export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => {
-  /*
-  Define state variables for 
-  appointment info
-  */
+ 
  const [title, setTitle] = useState('');
  const [date, setDate] = useState('');
  const [time, setTime] = useState('');
@@ -15,9 +12,7 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*
-    Add contact info and clear data  
-    */
+   
    addAppointment(title, date, time, contact);
     setTitle('');
     setImmediate('');
